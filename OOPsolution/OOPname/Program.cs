@@ -26,7 +26,10 @@ namespace OOPname
     {
         static void Main(string[] args)
         {
-            
+            double number1 = 123;
+            double num2 = 234;
+            Console.WriteLine(" ");
+            Console.WriteLine($"{number1,-15}{num2,20}");
         }
     }
 }
