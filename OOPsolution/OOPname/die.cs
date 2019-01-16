@@ -8,6 +8,10 @@ namespace OOPname
 {
     public class die
     {
+        // create an new instance of the math class Random
+        // this instance (occurance, objecct) will be shared by each instance of the class die
+        //this instance will be created when the first instance of die is created
+        private static Random _rnd = new Random();
         // this is the definition of a object
         // it is a conceptual view of the data 
         //   that will be held by a physical 
@@ -28,17 +32,17 @@ namespace OOPname
         //      b) return a internal data member value to the user
 
         // Fully Implemented Property
-        public int Sides
-        {
-            // takes internal values and returns it to the user
-            get { return _Sides; }
-            set
-            {
-                // takes the supplied user value and places it into the internal private data member
-                // the incoming piece of data is placed into a special variable that is called: value
-                _Sides = value;
-            }
-        }
+        //public int Sides
+        //{
+        //    // takes internal values and returns it to the user
+        //    get { return _Sides; }
+        //    set
+        //    {
+        //        // takes the supplied user value and places it into the internal private data member
+        //        // the incoming piece of data is placed into a special variable that is called: value
+        //        _Sides = value;
+        //    }
+        //}
         public string Color
         {
             // takes internal values and returns it to the user
@@ -61,6 +65,7 @@ namespace OOPname
                 _faceValue = value;
             }
         }
+        public int Sides { get; private set; }
         // Constructors
 
         // optional; if not supplied the system default constrctor is used which will assign a value to each data member/ auto implement property according to its datatype
@@ -118,6 +123,13 @@ namespace OOPname
                 // Sides = 6;
 
             }
+        }
+
+        public void Roll()
+        {
+            // no parameters are required for this method since it will be using the internal data values to complete its functionality
+
+            // reandomly generate a value for the die depending on the maximum Sides
         }
 
     }
